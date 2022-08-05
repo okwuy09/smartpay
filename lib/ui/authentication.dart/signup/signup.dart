@@ -11,6 +11,7 @@ import 'package:smartpay/services/provider.dart';
 import 'package:smartpay/ui/authentication.dart/signin/signin.dart';
 import 'package:smartpay/ui/authentication.dart/signup/otp_signup.dart';
 import 'package:provider/provider.dart';
+import 'package:smartpay/ui/onboarding/onboardingscreen.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({Key? key}) : super(key: key);
@@ -65,7 +66,17 @@ class _SignUpState extends State<SignUp> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       //page navigation button
-                      NavigationBox(onTap: () => Navigator.pop(context)),
+                      NavigationBox(onTap: () async {
+                        final prefs = await SharedPreferences.getInstance();
+                        prefs.setBool('showHome', false);
+
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => const OnboardingPage(),
+                          ),
+                        );
+                      }),
 
                       SizedBox(height: screensize.height * 0.05),
 

@@ -1,10 +1,8 @@
 import 'dart:convert';
 import 'dart:developer';
 import 'package:http/http.dart' as http;
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:smartpay/models/dashboard.dart';
 import 'package:smartpay/models/login.dart';
-import 'package:smartpay/models/logout.dart';
 import 'package:smartpay/models/register.dart';
 import 'package:smartpay/models/request_token.dart';
 import 'package:smartpay/models/verify_email_token.dart';
@@ -116,6 +114,8 @@ Future<http.Response?> verifyToken(VerifyToken data) async {
 //     log(e.toString());
 //   }
 // }
+
+// having problem in debuging the dasboard fetch data api, due to limited time, i build the app still working on the solution.
 
 Future<Dashboard> dashboard() async {
   // final prefs = await SharedPreferences.getInstance();

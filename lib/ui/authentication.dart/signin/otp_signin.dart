@@ -2,12 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:otp_text_field/otp_field_style.dart';
 import 'package:smartpay/components/button.dart';
 import 'package:smartpay/components/colors.dart';
-import 'package:smartpay/components/navigation_box.dart';
 import 'package:smartpay/components/style.dart';
 import 'package:otp_text_field/otp_field.dart';
 import 'package:otp_text_field/style.dart';
-import 'package:smartpay/ui/authentication.dart/signin/create_new_password.dart';
 import 'package:smartpay/ui/authentication.dart/signin/signin.dart';
+import 'package:smartpay/ui/homepage.dart';
 
 class OTPSignIn extends StatefulWidget {
   const OTPSignIn({Key? key}) : super(key: key);
@@ -121,10 +120,13 @@ class _OTPSignInState extends State<OTPSignIn> {
                         backgroundColor: AppColor.primaryColor,
                         textColor: AppColor.white,
                         onTap: () {
+                          // if pin is equal to the provided pin, navigate to the home page,
+                          //or
+                          // get the login fuction and save the user email and password with sharedpreference when a user signin, get the data, and login with it on firmation of your pin,
                           Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                              builder: (_) => const ResetPassword(),
+                              builder: (_) => const HomePage(),
                             ),
                           );
 

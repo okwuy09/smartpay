@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:smartpay/models/dashboard.dart';
 import 'package:smartpay/models/login.dart';
 import 'package:smartpay/models/register.dart';
 import 'package:http/http.dart' as http;
